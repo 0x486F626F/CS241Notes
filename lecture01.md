@@ -1,20 +1,18 @@
 # Lecture 01
 
-### What is a sequential program?
-
+#### What is a sequential program?
 Single threaded, only one thing going on at a time.
 
-### Goal: Foundations
-
+#### Goal: Foundations
 Understand how sequential programs "work" from the ground up
 
-### Starting Point
-
+#### Starting Point
 Bare hardware (so to speak)
 
 For CS 241, bare hardware is simulated MIPS machine which only understand 1 and 0
 
-At the end - get programs written in a C-like language to run on MIPS
+#### At the end
+Get programs written in a C-like language to run on MIPS
 
 ## The beginning: Binary and Hexadecimal Numbers
 
