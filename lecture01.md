@@ -33,10 +33,10 @@ Machine specific grouping of bytes
 
 4 bits (1/2 a byte) sometime called a nibble
 
-### Q: Given a byte (or a word) in the computer's memory, what does it mean? e.g. 11001011 means what?
-### A: It could mean many things. 
+#### Q: Given a byte (or a word) in the computer's memory, what does it mean? e.g. 11001011 means what?
+#### A: It could mean many things. 
 
-#### A number
+## 1. A number
 Binary number system. 11001001 = 201
 
 ##### How can we represent negative numbers?
@@ -59,7 +59,7 @@ E.g. for n = 3
 |  0|  1|  2|  3| -4| -3| -2| -1|
 ```
 
-n bits represent numbers $-2^(n-1)~2^(n-1)-1$
+n bits represent numbers -2^(n-1)~2^(n-1)-1
 
 - only one 0
 - left bit gibes sign
@@ -68,41 +68,33 @@ n bits represent numbers $-2^(n-1)~2^(n-1)-1$
 
 Then 11001001 = 201-256 = -55
 
-Convenice: Hexadecimal number
----
+### Convenice: Hexadecimal number
 
 - base 16, 0...F
 - more compacition binary
 - each hex digit = 4 bit (1 nibble)
 - 11001001 = 0xC9
 
-Q: Given a byte 11001001, how can we tell if it is unsigned, sign-magnititu, or 2's comp?
-A: We cannot, Need to remember what our intent was when we stored the byte!
+##### Q: Given a byte 11001001, how can we tell if it is unsigned, sign-magnititude, or 2's comp?
+##### A: We cannot, Need to remember what our intent was when we stored the byte!
 
 We do not know for sure that 11001001 represents a number!
 
-A character- which charactor?
----
+## 2. A character- which charactor?
 
-Need conventional mappin between bit patterns or charactors
+Need conventional mapping between bit patterns or charactors
 
-ASCII: uses 7 bits
+#### ASCII 
+- uses 7 bits
 - 8 bit can be used for additional chars
 - non-standard compatibility issues
 
-11001001 is not 7-bit ASCII
-100101 decimal 73 is ASCII for I
+11001001 is not 7-bit ASCII. 100101 decimal 73 is ASCII for I
 
-An instruction (or part for one)
----
+## 3. An instruction (or part for one)
 
 - For us, instructions are 32 bits=4bytes
 - 11001001 could be part of an instruction
 
-Garbage (unused memory)
+## 4. Garbage (unused memory)
 ---
-
-EBCDIC
----
-
-
