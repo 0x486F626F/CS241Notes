@@ -1,8 +1,6 @@
-Lecture 2
-===
+# Lecture 2
 
-Machine Language
----
+## Machine Language
 Computer programs operate on data
 
 Computer programs are data
@@ -123,13 +121,13 @@ $31 will contain the reight address. Need to set PC to $31
 Example 1: Add the value in reg 5 to reg 7 store the result in $3 the return.
 ```
 Location|Binary                                 |hex       |meaning
-------------------------------------------------------------------------
+--------|---------------------------------------|----------|------------
 00000000|0000 0000 1010 0111 0001 1000 0010 0000|0x00a71820|add $3 $5 $7
 00000004|0000 0011 1110 0000 0000 0000 0000 1000|0x03e00008|jr $31
 ```
 Example 2: Add 42 to 52, store in $3, return
 ```
 Location|Binary                                 |hex       |meaning
-------------------------------------------------------------------------
+--------|---------------------------------------|----------|------------
 00000012|0000 0011 1110 0000 0000 0000 0000 1000|0x03e00008|jr $31
 ```
