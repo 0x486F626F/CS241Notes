@@ -1,70 +1,65 @@
 # Lecture 01
 
-#### What is a sequential program?
+##### What is a sequential program?
 Single threaded, only one thing going on at a time.
 
-#### Goal: Foundations
+##### Goal: Foundations
 Understand how sequential programs "work" from the ground up
 
-#### Starting Point
+##### Starting Point
 Bare hardware (so to speak)
 
-For CS 241, bare hardware is simulated MIPS machine which only understand 1 and 0
+For CS 241, bare hardware is simulated **MIPS** machine which only understand 1 and 0
 
-#### At the end
+##### At the end
 Get programs written in a C-like language to run on MIPS
 
 ## The beginning: Binary and Hexadecimal Numbers
 
-Bit: binary digit, i.e. 0 or 1 (high/low voltage, contigurations on magnetic tape)
+### Bit
+Binary digit, i.e. 0 or 1 (high/low voltage, contigurations on magnetic tape)
 
 - all the computer understands
 - convenient to group bits together
 
-byte: 8 bits, e.g. 11001010, 256 possible bytes
+### Byte 
+8 bits, e.g. 11001010, 256 possible bytes
 
-word: machine specific grouping of bytes
+### Word
+Machine specific grouping of bytes
 
 - we will assume a 32-bit computer architecture
 - 1 word = 32 bits = 4 bytes
 
 4 bits (1/2 a byte) sometime called a nibble
 
-Q: Given a byte (or a word) in the computer's memory, what does it mean?
+### Q: Given a byte (or a word) in the computer's memory, what does it mean? e.g. 11001011 means what?
+### A: It could mean many things. 
 
-Ex: 11001011 means what?
+#### A number
+Binary number system. 11001001 = 201
 
-A: It could mean many things. 
+##### How can we represent negative numbers?
 
-1. A number. Binary number system. 11001001 = 201
+Simple way: resever the first bit to represent the sine: o for +, 1 for -. e.g. the 11001001 = -73
 
-How can we represent negative numbers?
-
-Simple way: resever the first bit to represent the sine: o for +, 1 for -
-The 11001001 = -73
-
-But: two representation for 0: 00000000, 100000000
+**But**: two representation for 0: 00000000, 100000000
 - wasteful
 - arithmetic on numbers is tricky (e.g. add a positive number and a negative number)
 
-Better way: 2's compleneat notation
+Better way: **2's Complement Notation**
 
 1. Interpret the n-bit numbers on unsigned integer
 2. If the first bit is 0, done.
 3. else subtract 2^n
 
 E.g. for n = 3
+```
+|000|001|010|011|100|101|110|111|
+|  0|  1|  2|  3| -4| -3| -2| -1|
+```
 
-* 000: 0
-* 001: 1
-* 010: 2
-* 011: 3
-* 100: -4
-* 101: -3
-* 110: -2
-* 111: -1
-
-n bits represent numbers -2^(n-1)~2^(n-1)-1
+n bits represent numbers $-2^(n-1)~2^(n-1)-1$
 
 - only one 0
 - left bit gibes sign
