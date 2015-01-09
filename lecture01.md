@@ -17,7 +17,7 @@ Get programs written in a C-like language to run on MIPS
 ## The beginning: Binary and Hexadecimal Numbers
 
 ### Bit
-Binary digit, i.e. 0 or 1 (high/low voltage, contigurations on magnetic tape)
+Binary digit, i.e. 0 or 1 (high/low voltage, configurations on magnetic tape)
 
 - all the computer understands
 - convenient to group bits together
@@ -33,7 +33,7 @@ Machine specific grouping of bytes
 
 4 bits (1/2 a byte) sometime called a nibble
 
-#### Q: Given a byte (or a word) in the computer's memory, what does it mean? e.g. 11001011 means what?
+#### Q: Given a byte (or a word) in the computer's memory, what does it mean? E.g. 11001011 means what?
 #### A: It could mean many things. 
 
 ## 1. A number
@@ -41,7 +41,7 @@ Binary number system. 11001001 = 201
 
 ##### How can we represent negative numbers?
 
-Simple way: resever the first bit to represent the sine: o for +, 1 for -. e.g. the 11001001 = -73
+Simple way: reserve the first bit to represent the sine: o for +, 1 for -. e.g. the 11001001 = -73
 
 **But**: two representation for 0: 00000000, 100000000
 - wasteful
@@ -68,21 +68,21 @@ n bits represent numbers -2^(n-1)~2^(n-1)-1
 
 Then 11001001 = 201-256 = -55
 
-### Convenice: Hexadecimal number
+### Convince: Hexadecimal number
 
 - base 16, 0...F
-- more compacition binary
+- more complication binary
 - each hex digit = 4 bit (1 nibble)
 - 11001001 = 0xC9
 
-##### Q: Given a byte 11001001, how can we tell if it is unsigned, sign-magnititude, or 2's comp?
+##### Q: Given a byte 11001001, how can we tell if it is unsigned, sign-magnitude, or 2's comp?
 ##### A: We cannot, Need to remember what our intent was when we stored the byte!
 
 We do not know for sure that 11001001 represents a number!
 
-## 2. A character- which charactor?
+## 2. A character- which character?
 
-Need conventional mapping between bit patterns or charactors
+Need conventional mapping between bit patterns or characters
 
 #### ASCII 
 - uses 7 bits
