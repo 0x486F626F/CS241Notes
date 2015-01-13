@@ -8,7 +8,7 @@ Location|Binary                                 |hex       |meaning
 00000000|0000 0000 0000 0000 0010 1000 0001 0100|0x00002814|lis $5
 00000004|0000 0000 0000 0000 0000 0000 0001 1010|0x0000002a|.word 42
 00000008|0000 0000 0000 0000 0011 1000 0001 0100|0x00003814|lis $7
-0000000a|0000 0000 0000 0000 0000 0000 0011 0100|0x00000034|.word 52
+0000000c|0000 0000 0000 0000 0000 0000 0011 0100|0x00000034|.word 52
 00000014|0000 0000 1010 0111 0001 1000 0010 0000|0x00a71820|add $3, $5, $7
 00000018|0000 0011 1110 0000 0000 0000 0000 1000|0x03e00008|jr $31
 ```
@@ -22,7 +22,7 @@ Replace tedious binary/hex encodings with easier-to-use mnemonics.
 * translation to binary can be automated (assembler)
 * one line of assembly = one machine instruction (one word)
 For example 2
-```
+```assembly
 lis $5				- load immediate and skip
 .word 42			- not an instruction, directly translate the word into binary
 lis $7
@@ -31,8 +31,6 @@ add $3, $5, $7		- deslination first ($3 <- $5 + $7)
 jr $31
 ```
 
-#### Example 3:
-Compute the absolute value of $1, store in $1 and return
 * some instruction modify *pc* - "braches & jumps"
 * *beq* 
 	- branch if two register have equal contets
@@ -41,3 +39,5 @@ Compute the absolute value of $1, store in $1 and return
 * also *bne*
 * *slt* "set less than"
 
+#### Example 3:
+Compute the absolute value of $1, store in $1 and return
