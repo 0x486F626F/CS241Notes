@@ -7,8 +7,10 @@ Want to write a procedure *f* in MIPS assembly
 ##### Call and Return
 * How do we transfer control in and out of *f*? What if *f* calls *g*?
 * How do we pass parameters?
+
 ##### Registers
 * What if *f* overwrites register we were using?
+
 e.g. Some critical data in $3, call procedure *f*, *f* modifies $3, on return, my data gone!
 
 We could reserve some of the registers for *f* and some for the main line
@@ -22,6 +24,7 @@ Use RAM
 Sensible options
 * allocate from either the top or the bottom of RAM
 * need to keep track of which RAM is used and which is not.
+
 MIPS machine helps us out, $30 initialized (by the loader) to just past the word of memory
 
 Can use $30 as a "bookmark" to separate used and unused RAM, if we allocate from the bottom.
@@ -74,12 +77,14 @@ main:
 ##### Return
 * need to set pc to the line after the jr (i.e. to HERE above)
 * How do we know which address that is?
+
 ##### Solution
 jalr instruction "jump and link to register"
+
 * like jr, but sets $31 to the address of the next instruction (pc)
 
-##### Q: jalr overwrites $31 then how can we return to the loader?
-And what if f calls g?
+##### Q: jalr overwrites $31 then how can we return to the loader? And what if f calls g?
+
 ##### A: Need to save $31 on the stack
 ```assembly
 main:
@@ -139,6 +144,7 @@ top:
 	* use sw to store word in location
 * 0xffff000c
 	* least significant byte will be printed
+
 e.g. print "A\n"
 ```assembly
 lis		$1
