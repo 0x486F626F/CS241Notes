@@ -4,3 +4,4 @@
 2. [Lecture 02](lecture02.md)
 3. [Lecture 03](lecture03.md)
 4. [Lecture 04](lecture04.md)
+5. [Lecture 05](lecture05.md)
