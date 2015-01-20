@@ -88,6 +88,7 @@ To assemble "bne $2, $0, -5"
 * 1st register = $2 = 2
 * 2nd register = $0 = 0
 * offset = -5
+
 6 bits + 5 bits + 5 bits + 16 bits = 32 bits
 
 1. to put 000101 in the first 6 bits, need to append 26 0, i.g. left shift by 26 bits
