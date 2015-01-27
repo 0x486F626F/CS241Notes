@@ -5,4 +5,5 @@
 3. [Lecture 03](lecture03.md)
 4. [Lecture 04](lecture04.md)
 5. [Lecture 05](lecture05.md)
-5. [Lecture 06](lecture06.md)
+6. [Lecture 06](lecture06.md)
+7. [Lecture 07](lecture07.md)
