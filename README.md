@@ -7,3 +7,4 @@
 5. [Lecture 05](lecture05.md)
 6. [Lecture 06](lecture06.md)
 7. [Lecture 07](lecture07.md)
+8. [Lecture 08](lecture08.md)

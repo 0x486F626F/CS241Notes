@@ -111,25 +111,3 @@ word 2 - location where the symbol is used
 word 3 - length of the name in chars (n)
 word 4 ... word (3 + n) - ASCII chars in the symbol name (each char in its own word)
 ```
-
-The other side:
-a.asm
-```assembly
-lis $3
-.word abc
-```
-b.asm
-```assembly
-abc: sw $3, -4($30)
-...
-jr $31
-```
-c.asm
-```assembly
-...
-abc: add $1, $2, $3
-...
-beq $2, $0, abc
-```
-How can the linker know which abc to link to? Cannot assume labels will not be duplicated.
-
