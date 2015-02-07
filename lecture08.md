@@ -97,13 +97,10 @@ Want a formal theory of string recognition -- general principles that work in th
 * finite set of symbols ({e.g. a, b, c})
 * typically denoted \Sigma, asin \Sigma={a, b, c}
 
-String (or word) -- finite sequence of symbols (form \Sigma)
-
-Length of a word |w|=number of chars in w
-
-Empty string -- an empty sequence of symbols. \epsilon denotes the empty string. \epsilon is NOT a symbol.
-
-Language -- set of strings (words)
+* String (or word) -- finite sequence of symbols (form \Sigma)
+* Length of a word |w|=number of chars in w
+* Empty string -- an empty sequence of symbols. \epsilon denotes the empty string. \epsilon is NOT a symbol.
+* Language -- set of strings (words)
 
 Note
 * \epsilon -- empty word
