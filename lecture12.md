@@ -31,7 +31,7 @@ C++ solution: adapt the language to the scanner, must separate > by space to cre
 What (if any) feature of C(or scheme) programs cannot be verified with DFA.
 
 Consider E={(, )} L={w in E^* | w is a string of balanced parentheses}
-![12-01](\pic\12-01.png)
+![12-01](/pic/12-01.png)
 
 Each new state recognizes one more level of nesting - but no finite number of states recognizes all levels of nesting, and DFAs must have finitely many states.
 
