@@ -12,3 +12,4 @@
 10. [Lecture 10](lecture10.md)
 11. [Lecture 11](lecture11.md)
 12. [Lecture 12](lecture12.md)
+13. [Lecture 13](lecture13.md)
