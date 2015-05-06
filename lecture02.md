@@ -14,7 +14,7 @@ Therefore possible to write programs that manipulate other programs. (operating 
 ##### Q: How do we know which parts of memory represent code and which represent data? 
 ##### A: We do not.
 
-#### What does a machine instruction look like? What instructions are there?
+##### Q: What does a machine instruction look like? What instructions are there?
 
 - Many different machine languages - processor specific
 - For us: MIPS(simplified): 18 different 32-bit instruction types
@@ -52,7 +52,7 @@ Fast -> Slow
 * Disk memory
 * Network memory
 
-**On the CPU**, small amount of very fast memory: **register**
+On the CPU, small amount of very fast memory: **register**
 
 ## MIPS
 
@@ -63,8 +63,8 @@ Fast -> Slow
 CPU can only operate directly on data in registers called $0, ..., $31
 
 * $0 is always 0
-* $31 is special (more later)
-* $30 is also sort of special 
+* $31 is special (later)
+* $30 is also sort of special (later)
 * example register operation: "add the contents of register s and t and put the result in register d"
 
 ##### Q: How many bits does it take to encode a register number? 
@@ -74,7 +74,7 @@ Therefore 15 bits to encode 3 register numbers - leaves 17 bits to encode operat
 
 ## RAM 
 * large amount of memory, stored away from the CPU
-* data travels between RAM and the CPU on the bus
+* data travels between RAM and the CPU on the BUS
 * big array of n bytes for large n (n ~ 10^9)
 * each cell has an address 0,...,n-1
 * each 4-byte block is a word
