@@ -4,24 +4,36 @@
 Want to write a procedure *f* in MIPS assembly
 
 ### Problems
-##### Call and Return
+#### Call and Return
 * How do we transfer control in and out of *f*? What if *f* calls *g*?
 * How do we pass parameters?
 
-##### Registers
+#### Registers
 * What if *f* overwrites register we were using?
 
 e.g. Some critical data in $3, call procedure *f*, *f* modifies $3, on return, my data gone!
 
-We could reserve some of the registers for *f* and some for the main line
-* So they do not interfere with each other
+We could reserve some of the registers for *f* and some for the main line, so they do not interfere with each other.
+
 * What if *f* calls *g* ... etc? Soon run out of registers
-* Instead guarantee that procedures leave registers unchanged when done
+
+Instead guarantee that procedures leave registers unchanged when done
 
 Use RAM
+
 * How do we keep procedures from using the same RAM?
 
-Sensible options
+Diagram of RAM:
+```
+ ____
+|Code|
+|____|
+|Free|
+|RAM |
+|____|
+|$30 |
+```
+
 * allocate from either the top or the bottom of RAM
 * need to keep track of which RAM is used and which is not.
 
@@ -67,25 +79,28 @@ f:
 	jr		$31				; return
 ```
 What about call and return?
-##### Call
+
+#### Call
 ```assembly
 main:
 	lis		$5
 	.word	f
 	jalr	$5	
 ```
-##### Return
+
+#### Return
 * need to set pc to the line after the jr (i.e. to HERE above)
 * How do we know which address that is?
 
-##### Solution
+#### Solution
 jalr instruction "jump and link to register"
 
 * like jr, but sets $31 to the address of the next instruction (pc)
 
-##### Q: jalr overwrites $31 then how can we return to the loader? And what if f calls g?
+#### Q: jalr overwrites $31 then how can we return to the loader? And what if f calls g?
 
-##### A: Need to save $31 on the stack
+#### A: Need to save $31 on the stack
+
 ```assembly
 main:
 	lis		$5
@@ -105,6 +120,7 @@ f:
 	;...
 	jr		$31	; return to caller
 ```
+
 ### Parameter & Result Passing
 * generally use register
 * if too many parameters, can push parameters on to stack
@@ -140,19 +156,22 @@ top:
 * if register, parameters, and stack managed properly, recursion will just work.
 
 ### Input & Output
-* output
-	* use sw to store word in location
-* 0xffff000c
+
+Use sw to store word in location at 0xffff000c
 	* least significant byte will be printed
 
-e.g. print "A\n"
+e.g. print "CS\n"
 ```assembly
 lis		$1
 .word	0xffff000c
 lis		$2
-.word	65
+.word	67
+sw		$2, 0($1)
+lis		$2
+.word	83
 sw		$2, 0($1)
 lis		$2
 .word	10
 sw		$2, 0($1)
+jr		$31
 ```

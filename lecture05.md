@@ -32,7 +32,8 @@ abc:
 ...
 ```
 We cannot assemble the "beq" because we do not yet know what "abc" is.
-##### Standard Solution: assemble in two passes
+
+#### Standard Solution: assemble in two passes
 1. group tokens into instructions, record the addresses of all labelled instructions ("symbol table" - list of (label, address) pairs)
 2. translate each instruction into machine code if an instruction refers to a label, look up the associated address in the symbol table.
 
@@ -44,7 +45,7 @@ Your assembler:
 * output assembled MIPS to stdout
 * output the symbol table to stderr
 
-##### Example:
+#### Example:
 ```assembly
 main:
 	lis		$2

@@ -5,16 +5,16 @@ Computer programs operate on data
 
 Computer programs are data
 
-### von Neumann Architecture
+## von Neumann Architecture
 
 Programs reside in the same memory as the data they operate on
 
 Therefore possible to write programs that manipulate other programs. (operating system, compilers, viruses)
 
-##### Q: How do we know which parts of memory represent code and which represent data? 
-##### A: We do not.
+#### Q: How do we know which parts of memory represent code and which represent data? 
+#### A: We do not.
 
-##### Q: What does a machine instruction look like? What instructions are there?
+#### Q: What does a machine instruction look like? What instructions are there?
 
 - Many different machine languages - processor specific
 - For us: MIPS(simplified): 18 different 32-bit instruction types
@@ -67,8 +67,8 @@ CPU can only operate directly on data in registers called $0, ..., $31
 * $30 is also sort of special (later)
 * example register operation: "add the contents of register s and t and put the result in register d"
 
-##### Q: How many bits does it take to encode a register number? 
-##### A: 5
+#### Q: How many bits does it take to encode a register number? 
+#### A: 5
 
 Therefore 15 bits to encode 3 register numbers - leaves 17 bits to encode operation
 
@@ -111,17 +111,17 @@ The only program the machine really runs
 
 Again - PC holds the address of the next instruction while the current instruction is running
 
-##### Q: How does a program get executed?
-##### A: Program called a leader puts your program in memory and sets PC to the address of the first instruction of the program
+#### Q: How does a program get executed?
+#### A: Program called a leader puts your program in memory and sets PC to the address of the first instruction of the program
 
-##### Q: What happens when a program ends?
-##### A: Need to return control to the loader. 
+#### Q: What happens when a program ends?
+#### A: Need to return control to the loader. 
 
 Set PC to the address of the next instruction in the loader.
 
 $31 will contain the right address. Need to set PC to $31
 
-#### Example 1: Add the value in reg 5 to reg 7 store the result in $3 the return.
+### Example 1: Add the value in reg 5 to reg 7 store the result in $3 the return.
 ```
 Location|Binary                                 |hex       |meaning
 --------|---------------------------------------|----------|------------

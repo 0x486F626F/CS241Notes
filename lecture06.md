@@ -17,6 +17,7 @@ Problems: OS is a program, where does it sit in memory? Other programs in memory
 * let the loader decide where to put the program
 
 Loader
+
 * take a program *p* as input
 * find a location a in memory for *p*
 * copies *p* to memory starting at *a*
@@ -43,6 +44,7 @@ return a
 ```
 
 Problem?
+
 * Labels may be resolved to the wrong addresses
 * Loader will have to fix this
 
@@ -75,6 +77,7 @@ It contains binary code and auxiliary info needed by the loader (and linker).
 Our object code format: MERL (MIPS Executable Relocatable Linkable)
 
 What do we need to put in our object file?
+
 * the code
 * which lines of the code (addresses) were originally .word id
 * other stuff later
@@ -95,6 +98,7 @@ table)		address to relocate
 ```
 
 ### Why 0x10000002?
+
 * It is MIPS for beq $0, $0, 2, command to skip the loader.
 * So MERL files can be executed as ordinary MIPS files, if loaded at address 0x00.
 
