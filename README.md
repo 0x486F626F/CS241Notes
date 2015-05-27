@@ -1,6 +1,6 @@
-# CS 241 Foundations of Sequential Programs
+## CS 241 Foundations of Sequential Programs
 
-http://hongbozhang.me/Notes/CS241/lecture01.html
+http://hongbozhang.me/notes/CS241/
 
 1.  [Lecture 01](lecture01.md)
 2.  [Lecture 02](lecture02.md)

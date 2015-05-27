@@ -38,6 +38,7 @@ jr		$31
 - branch if two register have equal contents
 - increment *pc* by the given number of words
 - can branch backwards
+
 #### bne
 #### slt "set less than"
 
@@ -65,9 +66,11 @@ jr		$31			;
 ```
 
 ### RAM
+
 #### lw 
 * "load word" from RAM into register
 * lw $a, i($b) loads MEM[b + i] into $a
+
 #### sw
 * store word, from register to RAM
 * sw $a, i($b) stores $a at MEM[$b + i]
@@ -76,6 +79,7 @@ jr		$31			;
 * $1 address of an array
 * $2 number of elements in the array
 place element 5 in $3
+
 #### Solution 1:
 ```assembly
 lw	$3,	20($1)

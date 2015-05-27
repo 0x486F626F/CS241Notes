@@ -1,7 +1,8 @@
 # Lecture 06
 
 ## Loaders
-OS code:
+
+#### OS code:
 ```
 repeat:
 	p = next program to run
@@ -23,7 +24,8 @@ Loader
 * copies *p* to memory starting at *a*
 * return *a* to OS
 
-OS 2.0:
+#### OS 2.0:
+
 ```
 repeat:
 	p = next program to run
@@ -32,9 +34,10 @@ repeat:
 	beq $0, $0, repeat
 ```
 
-### Loader
-Input: words w1,..., wk -- the machine code (p)
+Loader Pseudocode:
+
 ```
+Input: words w1,..., wk -- the machine code (p)
 n = k + space for stack //how much stack space? pick something!
 a = first address of n contiguous words of unused RAM
 for i = 1..k
@@ -49,13 +52,15 @@ Problem?
 * Loader will have to fix this
 
 What needs to change when we relocate?
+
 ```
-.word id		//add a to id
-.word constant	//do not relocate
+.word id							//add a to id
+.word constant						//do not relocate
 anything else (includes beq, bne)	//do not relocate
 ```
 
-OS 3.0
+#### OS 3.0
+
 ```
 repeat:
 	p = next program to run

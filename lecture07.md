@@ -40,7 +40,7 @@ cat a.sm b.asm c.asm | java cs241.binasm > result.mips
 ```
 This will work, but why should we have to assemble these files more than once (i.e. every time we cat them into a larger project). Cannot we assemble first and then cat?
 
-##### Issues
+#### Issues
 * output needs to be relocatable
 * at most one of the pieces can be loaded at address 0x00
 * so need to output MERL, not just MIPS
@@ -77,7 +77,7 @@ a: ...
 ```
 one.asm cannot be executed without being linked to code that contains babel a
 
-##### How does the assembler notify us?
+#### How does the assembler notify us?
 Make an entry in the MERL file, but
 * Do not we lose a valuable error check?
 * What if we meant adb when we said abc?
