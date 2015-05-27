@@ -1,44 +1,5 @@
 # Lecture 08
 
-The other side:
-a.asm
-```assembly
-lis $3
-.word abc
-```
-b.asm
-```assembly
-abc: sw $3, -4($30)
-...
-jr $31
-```
-c.asm
-```assembly
-...
-abc: add $1, $2, $3
-...
-beq $2, $0, abc
-```
-How can the linker know which *abc* to link to? Cannot assume labels will not be duplicated.
-
-How can we make one *abc* available and the other not available?
-
-Solution: another assembler directive and MERL entry.
-
-Directive: .export abc 
-* make abc available for linking
-* does NOT assemble to a wor of MIPS
-* tells the assembler to make an entry in the MERL symbol table
-
-### MERL entry: External Symbol Definition (ESD)
-Format:
-```
-word 1 - 0x05 format code for ESD
-word 2 - address the symbol represents
-word 3 - length of name (n)
-word 4 ~ word (3+n) - Then name in ASCII one word per char
-```
-
 MERL file contains:
 * the code
 * all addresses that need relocating
