@@ -138,13 +138,13 @@ else error
 
 Abstraction of this program:
 
-![08-01](/pic/08-01.png)
+![08-01](pic/08-01.png)
 
 Bubbles are states -- Configurations of the pregram, based on input seen.
 
 e.g. MIPS operators
 
-![08-02](/pic/08-02.png)
+![08-02](pic/08-02.png)
 
 Since programming languages do not usually admit only finitely many programs, 
 finite languages are not that useful.
