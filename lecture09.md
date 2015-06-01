@@ -1,27 +1,5 @@
 # Lecture 09
 
-## Finite Language
-* has finite words
-* can recognize a word by comparing with each word in the (finite) set.
-
-##### Excise: L={cat, car, cow}
-write code to answer (w in L)? such that: w is scanned exactly once with out storing previously seen chars.
-```
-scan the input left-to-right
-if first char is c, move on, else error
-	if next char is a
-		if next char is t
-			if input is empty, accept, else error
-		else if next char is r
-			if input is empty, accept, else error
-		else error
-	else if next char is o
-		if next char is w
-			if input is empty, accept, else error
-		else error
-	else error
-else error
-```
 Abstraction of this program is Trie. Nodes are states (configurations) of the program, based on input seen.
 
 Since programming languages do not usually accept only finitely many programs. Cannot do much with finite languages.

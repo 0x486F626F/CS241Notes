@@ -115,7 +115,7 @@ So when the assembler encounters .word abc, iF label abc does not occur in curre
 
 Notifying the system: make an entry in MERL table
 
-Formal code 0x11 means External Symbol reference (ESR)
+Formal code 0x11 means External Symbol Reference (ESR)
 
 What info is needed?
 
@@ -175,5 +175,3 @@ word 2				- address the symbol represents
 word 3				- length of name (n)
 word 4 ~ word (3+n)	- Then name in ASCII one word per char
 ```
-
-

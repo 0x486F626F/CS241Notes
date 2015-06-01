@@ -1,6 +1,6 @@
 ## CS 241 Foundations of Sequential Programs
 
-I am officially taking CS 241 in Spring 2015. I will continue updating notes.
+I am "officially" taking CS 241 in Spring 2015. I will continue updating notes.
 For better view with math symbols, please check http://hongbozhang.me/notes/CS241/
 
 1.  [Lecture 01](lecture01.md)
