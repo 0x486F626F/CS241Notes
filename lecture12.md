@@ -1,45 +1,57 @@
 # Lecture 12
 
-"abab" could be interpreted to be 1, 2, 3, 4 tokens.
-
-Decide to only take the epsilon-move if no other choice: always look for the longest possible next token.
-
-Consider L={aa, aaa}, w=aaaa. Take longest token first, "aaa", "a" left over, but "aa" and "aa" could have been matched.
-
 ## Maximum Munch Algorithm
-Run DFA (without epsilon-moves) until no non-error move is possible. 
+
+Run DFA (without $\epsilon$-moves) until no non-error move is possible.    
 ```
-If in accepting state, output token founded. 
-else	back up to most recent accepting state
-		input to that points is next token
-		resume scanning from there
+If in accepting state, output token founded.    
+else	back up to most recent accepting state (use a variable to keep track of this)    
+		input to that points is next token   
+		resume scanning from there    
 endif
-output token: epsilon move back to go
 ```
+output token: $\epsilon$ move back to go
 
 ## Simplified Maximum Munch Algorithm
 As above, but if not in a accepting state when no transition is possible, error (no move back)
 
+#### Example: 
+1. Must start and end with a letter, can contain -
+2. Operator --
+
+```
+ab--
+   ^ - scan to this point
+     - no further move is possible
+	 - but ab-- not a valid token, so not in an accepting state.
+	   Simplified Maximum Munch: ERROR
+	   Maximum Much: back up to previous accepting state (ab), scan from there
+	                 tokens: ab, --
+```
+
 In practice, Simplified Maximum Munch usually good enough. Language typically designed to facilitate scanning by Simplified Maximum Munch.
 
-Example in C++: vector <vector<int>> v;
+Example in C++: vector \<vector\<int\>\> v;
 
-C++ longest match scanner scans this as one token, >> rather than as > >
-
+C++ longest match scanner scans this as one token, >> rather than as > >    
 C++ solution: adapt the language to the scanner, must separate > by space to create two tokens.
 
-What (if any) feature of C(or scheme) programs cannot be verified with DFA.
+What (if any) specific feature of C (or scheme) programs cannot be verified with DFA.
 
-Consider E={(, )} L={w in E^* | w is a string of balanced parentheses}
-![12-01](/pic/12-01.png)
+Consider $\Sigma=\{(,)\}$ $L=\{w\in\Sigma ^*|w$ is a string of balanced parentheses$\}$    
+e.g $\epsilon\in L$, $()\in L$, $()()\in L$, $(())\in >$, $)(\not\in L$, $())\not\in L$
+
+![12-01](pic/12-01.png)
 
 Each new state recognizes one more level of nesting - but no finite number of states recognizes all levels of nesting, and DFAs must have finitely many states.
 
 ## Context-Free Languages
 Languages that can be described by a context-free grammar, set of "rewrite rules".
 
-#### Intuition-balanced pares
-A word in the language is either empty or a word in the language surrounded by (), or the concatenation of two words in the language.
+#### Intuition: balanced pares
+* A word in the language is either empty $S\rightarrow\epsilon$
+* or a word in the language surrounded by () $S\rightarrow(S)$
+* or the concatenation of two words in the language $S\rightarrow SS$
 
 Shorthand: S->E|(S)|SS
 
@@ -49,54 +61,51 @@ S=>SS=>(S)S=>((S))S=>(())S=>(())(S)=>(())()
 ```
 
 Notation: "=>" = "derives"
-"a=>b" means b can be obtained from a by one application of grammar rule.
+"a=>b" means $b$ can be obtained from $a$ by one application of grammar rule.
 
-Def: A context-free grammar consists of
-* An alphabet epsilon of terminal symbols.
-* A finite non-empty set N of non-terminal symbols, N intersects Sigma = empty (we use V "vocabulary" to denote N intersects Sigma)
-* A finite set P of productions. Productions have the form A->B where A in N, B in V^*
-* An element S in N (Start Symbol)
+### Formal Definition
+A context-free grammar consists of
+
+* An alphabet $\Sigma$ of terminal symbols.
+* A finite non-empty set $N$ of non-terminal symbols, $N\cap\Sigma = \emptyset$ (we use $V$ (vocabulary) to denote $N\cup\Sigma$)
+* A finite set $P$ of productions. Productions have the form $A\rightarrow B$ where $A\in N$, $B\in V ^*$
+* An element $S$ in $N$ (start symbol)
 
 Conventions:
-a, b, c, ... elements of Sigma (characters)
-x, y, z, ... elements of Sigma^* (string)
-A, B, C, ... elements of N (non-terminals)
-Alpha, Beta, Gamma, ... elements of V^* ((N intersected Sigma)^*)
 
-We write AlphaAB=>AlphaGammaB if there is a production A->Gamma in P (RHS derivable from the LHS in one step). 
-```
-AlphaAB=>*AlphaGammaB means AlphaAB=>Delta_1=>Delta_2=>...Delta_k=>AlphaGammaB
-```
-k >= 0 (0 or more derivation steps)
+* $a, b, c, ...$ elements of $\Sigma$ (characters)
+* $x, y, z, ...$ elements of $\Sigma ^*$ (string)
+* $A, B, C, ...$ elements of $N$ (non-terminals)
+* $S$ start symbol
+* $\alpha, \beta, \gamma, ...$ elements of $V ^*$ ($(N\cup\Sigma)^*$)
 
-Def: L(G)={w in Sigma^* | S=>*w} language specified by grammar, string of terminals derivable from S.
+We write $\alpha AB\Rightarrow \alpha\gamma B$ if there is a production $A->\gamma$ in $P$ (RHS derivable from the LHS in one step). 
 
-Def: A language L is context-free if L=L(G) for some context-free grammar G.
+$\alpha\Rightarrow *\beta$ means $a\Rightarrow ...\Rightarrow\beta$ (0 or more steps)
 
-Ex: Palindromes over {a, b, c}
-```
-S->aSa|bSb|cSc|M M->a|b|c|empty
-```
+### Definition
+$L(G)=\{w\in\Sigma ^* | S\Rightarrow *w\}$ language specified by $G$, string of terminals derivable from $S$.
 
-Expressions: epsilon = {a, b, c, +, -, *, /} L={arithmetic expressions, using symbol from Sigma}
-```
-S->a|b|c|S op S| op->+|-|*|/
-Sigma`=Sigma U {(, )} L`={expressions with parentheses}
-S->a|b|c|S op S|(S) op->+|-|*|/
-```
+A language $L$ is context-free if $L=L(G)$ for some context-free grammar $G$.
+
+#### Example: Palindromes over $\{a, b, c\}$
+$S\rightarrow aSa|bSb|cSc|M$, $M\rightarrow \epsilon|a|b|c$   
+Show: $S\Rightarrow*abcba$    
+
+$S\Rightarrow aSa\Rightarrow abSba\Rightarrow abMba\Rightarrow abcba$
+
+Expressions: $\Sigma = \{a, b, c, +, -, *, /\}$ $L=\{$arithmetic expressions, using symbol from $\Sigma\}$
+
+$S\rightarrow S OP S|a|b|c|(S)$, $OP\rightarrow +|-|*|/$    
+
+$\Sigma = \{a, b, c, +, -, *, /, (, )\}$ $L=\{$arithmetic expressions, using symbol from $\Sigma\}$
+
+$S\rightarrow S OP S|a|b|c$, $OP\rightarrow +|-|*|/$    
 
 Show: S=>*a+b
-```
-S=>S op S=>a op S=>a + S=>a + b
-```
+
+$S=>S op S=>a op S=>a + S=>a + b$
 
 Leftmost derivation -- always expand leftmost symbol first
 
-Rightmost derivation -- rightmost first.
-
-Derivations: expressed naturally + succinctly as a tree structure.
-
-![12-02](/pic/12-02.png)
-
-For every leftmost (for rightmost) derivation tree is a unique parse tree.
-```
+Rightmost derivation -- always expand rightmost symbol first.

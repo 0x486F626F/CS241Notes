@@ -35,7 +35,9 @@ Therefore possible to write programs that manipulate other programs. (operating 
 
 ## CPU(Central Processing Unit) 
 "brain of the computer"
+
 Control Unit: 
+
 * decodes instructions
 * dispatches to other parts of the computer to carry them out
 
@@ -46,6 +48,7 @@ Control Unit:
 Many kinds
 
 Fast -> Slow
+
 * CPU
 * Cache
 * Main memory
@@ -73,6 +76,7 @@ CPU can only operate directly on data in registers called $0, ..., $31
 Therefore 15 bits to encode 3 register numbers - leaves 17 bits to encode operation
 
 ## RAM 
+
 * large amount of memory, stored away from the CPU
 * data travels between RAM and the CPU on the BUS
 * big array of n bytes for large n (n ~ 10^9)
@@ -112,7 +116,7 @@ The only program the machine really runs
 Again - PC holds the address of the next instruction while the current instruction is running
 
 #### Q: How does a program get executed?
-#### A: Program called a leader puts your program in memory and sets PC to the address of the first instruction of the program
+#### A: Program called a loader puts your program in memory and sets PC to the address of the first instruction of the program
 
 #### Q: What happens when a program ends?
 #### A: Need to return control to the loader. 

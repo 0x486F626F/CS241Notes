@@ -5,14 +5,17 @@
 Assembly Code -> Assembler -> Machine Code
 ```
 Any translation process involves two phases.
+
 1. Analysis - understand what is meant by the source string
 2. Synthesis - output the equivalent target string
 
 Assembly file - stream of characters
+
 * First step generally to group characters into meaningful **tokens** e.g. label, hex number, register number, .word, etc.
 * This is done for you in asm.ss, asm.cc
 
 Your job: 
+
 * group tokens into instructions (if possible) (Analysis)
 * output equivalent machine code (Synthesis)
 
@@ -20,6 +23,7 @@ If the tokens are not arranged into sensible instructions, output ERROR to stder
 
 #### Advice:
 There are many more wrong token configurations than right ones.
+
 * Focus on finding all the right ones, anything else is error.
 * Later, more structured ways of grouping tokens (parsing)
 
@@ -34,14 +38,17 @@ abc:
 We cannot assemble the "beq" because we do not yet know what "abc" is.
 
 #### Standard Solution: assemble in two passes
+
 1. group tokens into instructions, record the addresses of all labelled instructions ("symbol table" - list of (label, address) pairs)
 2. translate each instruction into machine code if an instruction refers to a label, look up the associated address in the symbol table.
 
 Note: 
+
 * a line of assembly may have more than one label. (e.g. "f:g: mult $1 $2")
 * can label the address just past the end of the program
 
 Your assembler:
+
 * output assembled MIPS to stdout
 * output the symbol table to stderr
 
@@ -85,6 +92,7 @@ Note: to negate a two's complement number, flip the bits and add 1.
 
 ### Bit-level operations
 To assemble "bne $2, $0, -5"
+
 * opcode = 000101 = 5
 * 1st register = $2 = 2
 * 2nd register = $0 = 0
@@ -98,9 +106,9 @@ To assemble "bne $2, $0, -5"
 4. -5 is 32 bits, want only the last 16 bits.
 
 Bitwise "and" and "or"
+
 * bitwise & with 1: original value stays the same
 * bitwise & with 0: result is 0
-
 * bitwise | with 1: result is 1
 * bitwise | with 0: original value stays the same
 

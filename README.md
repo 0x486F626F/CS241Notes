@@ -16,3 +16,5 @@ For better view with math symbols, please check http://hongbozhang.me/notes/CS24
 11. [Lecture 11](lecture11.md)
 12. [Lecture 12](lecture12.md)
 13. [Lecture 13](lecture13.md)
+13. [Lecture 14](lecture14.md)
+13. [Lecture 15](lecture15.md)
