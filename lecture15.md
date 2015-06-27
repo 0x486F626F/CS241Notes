@@ -80,7 +80,8 @@ Why? $T+E$ and $T$ generate the same first symbols.
 2. $E'\rightarrow \epsilon|+E$
 3. $T\rightarrow FT'$
 4. $T'\rightarrow \epsilon|*T$
-5. $F\\rightarrow id$
+5. $F\rightarrow id$
+
 This grammar is $LL(1)$
 
 $LL(1)$ conflicts with left-associativity.

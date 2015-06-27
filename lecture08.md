@@ -95,9 +95,9 @@ Symbol can be anything we want
 #### Answer: Depends on how complex the language is.
 
 * $\{a^{2n}b | n\geq 0\}$ -- easy
-* $\{valid MIPS assembly programs\}$ -- almost easy
-* $\{valid C programs\}$ -- harder
-* $\{Some languages\}$ -- impossible
+* $\{$valid MIPS assembly programs$\}$ -- almost easy
+* $\{$valid C programs$\}$ -- harder
+* $\{$Some languages$\}$ -- impossible
 
 Characterize languages by complexity of recognition. (from easy to harder to impossible)
 
