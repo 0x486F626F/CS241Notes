@@ -94,7 +94,7 @@ Stack stores partially-reduced input read so far.
 
 $w\Leftarrow\alpha_k\Leftarrow\alpha_{k-1}\Leftarrow ... \Leftarrow\alpha_1\Leftarrow\ S$
 
-**Invariant**: stack and unread input = $alpha_i$ (or $w$ or $S$)
+**Invariant**: stack and unread input = $\alpha_i$ (or $w$ or $S$)
 
 #### Example
 1. $S'\rightarrow\vdash S\dashv$

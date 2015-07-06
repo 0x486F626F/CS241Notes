@@ -28,7 +28,7 @@ say $w=\vdash abywx\dashv$
 
 |Stack				|Read Input				|UnreadInput				|Action|
 |---|---|---|---|
-|$S'$				|$\epsilon$				|$\vdash abywx\dashv$		|pop $S'$; push $\dashv, S, vdash$|
+|$S'$				|$\epsilon$				|$\vdash abywx\dashv$		|pop $S'$; push $\dashv, S, \vdash$|
 |$\dashv S\vdash$	|$\epsilon$				|$\vdash abywx\dashv$		|match $\vdash$|
 |$\dashv S$			|$\vdash$				|$abywx\dashv$				|pop $S$; push $B,y,A$|
 |$\dashv ByA$		|$\vdash$				|$abywx\dashv$				|pop $A$; push $b,a$|
@@ -114,7 +114,7 @@ initialize $First[A]=\{\}$ $\forall A$
 repeat    
 $\quad$ for each rule $B\rightarrow B_1 ... B_k$      
 $\quad$ for $i=1 ... k$      
-$\quad\quad\quad$ if $B_i$ if a terminal $a$    
+$\quad\quad\quad$ if $B_i$ is a terminal $a$    
 $\quad\quad\quad\quad$ $First[B]\cup=\{a\}$ break   
 $\quad\quad\quad$ else    
 $\quad\quad\quad\quad$ $First[B]\cup=First[B_i]$    

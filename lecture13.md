@@ -82,5 +82,5 @@ Find: $S\Rightarrow ... \Rightarrow w$ (or report that there is no derivation)
 How can this be done? 2 choices:
 
 1. **Forwards (top-down)**: start at $S$, expand until you reach $w$.
-2. **Backwards (bottom-up)**$: start at $w$, figure out how to get back to $S$.
+2. **Backwards (bottom-up)**: start at $w$, figure out how to get back to $S$.
 
