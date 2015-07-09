@@ -170,16 +170,3 @@ string typeof(Tree &t) {
 }
 ```
 
-#### Singleton Productions
-
-$expr\rightarrow term$    
-$term\rightarrow factor$   
-$factor\rightarrow id$   
-
-Type of LHS = type of RHS
-
-$$\frac{}{NUM:int}\quad\frac{}{NULL:int*}$$
-
-If $E$ has type $\tau$, then $(E)$ has type $\tau$.
-
-$$\frac{E:\tau}{(E):\tau}$$
