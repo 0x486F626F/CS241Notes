@@ -229,6 +229,12 @@ return x;
 return f();
 ```
 
+may create some tail recursinve calls.
+
+Generalization: tail call optimization
+
+When a function's last action is any function call (recursive or not), can reuse the stack frame.
+
 # WLP4?
 
 * SL (small language)
