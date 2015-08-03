@@ -26,3 +26,4 @@ For better view with math symbols, please check http://hongbozhang.me/notes/CS24
 21. [Lecture 21](lecture21.md)
 22. [Lecture 22](lecture22.md)
 23. [Lecture 23](lecture23.md)
+24. [Lecture 24](lecture24.md)
