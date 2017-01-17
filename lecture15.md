@@ -119,7 +119,8 @@ $w\Leftarrow\alpha_k\Leftarrow\alpha_{k-1}\Leftarrow ... \Leftarrow\alpha_1\Left
 |$\vdash S \dashv$| $\vdash abywx\dashv$|	$\epsilon$| Reduce $S'\rightarrow\vdash S\dashv$, pop $S$, push $S'$|
 |$\vdash S \dashv$| $\vdash abywx\dashv$|	$\epsilon$|	Accept|
 
-Chice at eacht step:
+Choice at each step:
+
 1. Shift a character from input to stack
 2. Reduce the top of stack is the RHS of a grammar rule - replace with LHS.
 

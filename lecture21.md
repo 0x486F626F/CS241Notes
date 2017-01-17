@@ -164,7 +164,6 @@ code(procedure) =   sub $29, $30, $4
 What does the stack look like?
 
 ```
-...
 |__________|
 |local regs|-$30
 |__________|
@@ -176,7 +175,7 @@ What does the stack look like?
 |__________|
 |   $29    |
 |__________|____
-...
+```
 
 
 Suppose $g$ is 
@@ -184,7 +183,7 @@ Suppose $g$ is
 ```
 int g(int a, int b, int c) {
 int d = 0; int e = 0; int f = 0;
-...
+//...
 }
 ```
 
@@ -211,7 +210,7 @@ Fix symbol table:
 * add 4*number of arguments to all offsets in symbol table.
 * Push local variable first, then save registers
 
-...
+```
 |__________|
 |saved regs|-$30
 |__________|
@@ -223,7 +222,7 @@ Fix symbol table:
 |__________|
 |   $29    |
 |__________|____
-...
+```
 
 Name | Type | Offset
 ---|---|---
